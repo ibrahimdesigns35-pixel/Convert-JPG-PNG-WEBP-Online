@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image Converter Tool – Convert JPG, PNG & WEBP Online Instantly</title>
+    <meta name="description"
+        content="Use our Free Image Converter Tool to convert JPG, PNG, and WEBP images instantly online. Fast, secure, and 100% browser-based image conversion with no uploads to server.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-magic"></i> FreeImageConverter
+            </a>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Layer 1: Background Blurry Icons -->
+        <div class="floating-element icon-md blur-md float-v2 mobile-hide" style="top: 5%; left: 10%;">WEBP</div>
+        <div class="floating-element icon-lg blur-sm float-v3" style="top: 15%; right: 5%;">PNG</div>
+        <div class="floating-element icon-sm blur-md float-v1 mobile-hide" style="bottom: 10%; right: 15%;">JPG</div>
+
+        <!-- Layer 2: Middle Sharp Icons -->
+        <div class="floating-element icon-md float-v1" style="bottom: 20%; left: 8%;">JPG</div>
+        <div class="floating-element icon-lg float-v2 mobile-hide" style="top: 40%; left: 5%;">WEBP</div>
+        <div class="floating-element icon-sm float-v3" style="top: 50%; right: 12%;">PNG</div>
+
+        <div class="container hero-content">
+            <h1 class="reveal">Free Image Converter Tool – <span>Convert JPG, PNG & WEBP</span> Online</h1>
+            <p class="reveal">The fastest, most secure way to transform your images. Everything happens right in your
+                browser – 100% private, no server uploads required.</p>
+            <a href="#converter-tool" class="btn btn-primary reveal">Convert Image Now</a>
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section id="converter-tool" class="container" style="padding: 5rem 0;">
+        <div class="card reveal" style="max-width: 800px; margin: 0 auto;">
+            <div class="tool-header" style="text-align: center; margin-bottom: 2rem;">
+                <h2>Start Your Conversion</h2>
+                <p>Upload your image and choose your desired format</p>
+            </div>
+
+            <div id="upload-area" class="upload-zone"
+                style="border: 2px dashed var(--border-color); padding: 3rem; text-align: center; cursor: pointer; border-radius: var(--radius); transition: var(--transition);">
+                <i class="fas fa-cloud-upload-alt"
+                    style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <p>Drag & drop image here or <strong>browse files</strong></p>
+                <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp" style="display: none;">
+            </div>
+
+            <div id="preview-area" style="display: none; margin-top: 2rem;">
+                <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <img id="imagePreview" src="" alt="Preview"
+                            style="border-radius: var(--radius); border: 1px solid var(--border-color);">
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <h3 style="margin-bottom: 1rem;">Conversion Settings</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="formatSelect"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Convert to:</label>
+                            <select id="formatSelect"
+                                style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
+                                <option value="image/jpeg">JPG</option>
+                                <option value="image/png">PNG</option>
+                                <option value="image/webp">WEBP</option>
+                            </select>
+                        </div>
+                        <button id="convertBtn" class="btn btn-primary" style="width: 100%;">Convert & Download</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="status-area" style="margin-top: 1.5rem; text-align: center; display: none;">
+                <div id="loader" style="display: none;">
+                    <i class="fas fa-spinner fa-spin" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                    <p>Processing image...</p>
+                </div>
+                <div id="successMessage" style="display: none; color: #059669; font-weight: 600;">
+                    <i class="fas fa-check-circle"></i> Success! Your image has been converted.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section style="background-color: var(--bg-white); padding: 5rem 0;">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 4rem;">How It Works</h2>
+            <div class="footer-grid">
+                <div class="card reveal" style="text-align: center;">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--primary-color);">
+                        1</div>
+                    <h3>Upload Image</h3>
+                    <p>Select the JPG, PNG, or WEBP file you want to convert from your device.</p>
+                </div>
+                <div class="card reveal" style="text-align: center; transition-delay: 0.1s;">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--primary-color);">
+                        2</div>
+                    <h3>Choose Format</h3>
+                    <p>Pick your output format (JPG, PNG, or WEBP) from the simple dropdown menu.</p>
+                </div>
+                <div class="card reveal" style="text-align: center; transition-delay: 0.2s;">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--primary-color);">
+                        3</div>
+                    <h3>Download File</h3>
+                    <p>Your converted image is ready instantly! Click download to save it to your device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container" style="padding: 5rem 0;">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 4rem;">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="card reveal" style="margin-bottom: 1rem;">
+                <h3>Is this tool free?</h3>
+                <p>Yes! Our <strong>Free Image Converter Tool</strong> is completely free to use with no hidden costs or
+                    limits.</p>
+            </div>
+            <div class="card reveal" style="margin-bottom: 1rem;">
+                <h3>Are my images uploaded to a server?</h3>
+                <p>No. For your privacy, all conversions happen directly in your browser using the Canvas API. Your
+                    images never leave your computer.</p>
+            </div>
+            <div class="card reveal" style="margin-bottom: 1rem;">
+                <h3>Which formats do you support?</h3>
+                <p>We support the most popular web formats: JPG, PNG, and WEBP. You can convert between any of these
+                    formats effortlessly.</p>
+            </div>
+            <div class="card reveal" style="margin-bottom: 1rem;">
+                <h3>Is it secure?</h3>
+                <p>Absolutely. Since no data is transmitted to our servers, it is the most secure way to convert
+                    sensitive images.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 1.5rem;">
+                    <i class="fas fa-magic"></i> FreeImageConverter
+                </a>
+                <p>The ultimate <strong>Free Image Converter Tool</strong> for fast, secure, and private image
+                    transformations online.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; font-size: 1.25rem;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Popular Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="#">JPG to PNG</a></li>
+                    <li><a href="#">PNG to WEBP</a></li>
+                    <li><a href="#">WEBP to JPG</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="mailto:support@freeimageconvertertool.com">Email Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                &copy; 2026 Free Image Converter Tool. All rights reserved. Built for Privacy.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
